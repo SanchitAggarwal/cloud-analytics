@@ -1,0 +1,2 @@
+hadoop wordcount hadoop/hadoop-examples-1.0.3.jar 2 2 input-dir in-dir text output-dir out-dir text no_of_reducers numOfReducers Integer text_input_format textinputformat Integer 
+/usr/local/hadoop/bin/hadoop jar hadoop/hadoop-examples-1.0.3.jar wordcount in-dir out-dir numOfReducers textinputformat

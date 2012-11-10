@@ -1,0 +1,27 @@
+Hadoop wordcount Hadoop/wordcount 2 2 input-dir in-dir output-dir out-dir no_of_reducers numOfReducers text_input_format textinputformat 
+/usr/local/hadoop/bin/hadoop jar Hadoop/wordcount.jar in-dir out-dir numOfReducers textinputformat
+Hadoop aggregatewordcount Hadoop/aggregatewordcount 3 1 input-dir in-dir output-dir out-dir no_of_reducers numOfReducers text-input-format textinputformat
+/usr/local/hadoop/bin/hadoop jar hadoop-examples-*.jar aggregatewordcount in-dir out-dir numOfReducers textinputformat
+Hadoop aggregateWordHistogram Hadoop/aggregatewordhistogram 3 1 input-dir in-d ir output-dir out-dir no_of_reducers numOfReducers text-input-format textinputformat
+/usr/local/hadoop/bin/hadoop jar hadoop-examples-*.jar aggregatewordhist in-dir out-dir numOfReducers textinputformat
+Hadoop join Hadoop/join 2 7(provided as options) [-m maps] [-r reduces] [-inFormat input format class] [-outFormat output format class] [-outKey output key class] [-outValue output value class] [-joinOp <inner|outer| override>]
+/usr/local/hadoop/bin/hadoop jar build/hadoop-examples.jar join -m maps -r reduces -inFormat input_format_class -outFormat output_format_class -outKey output_key_class -outValue output_value_class -joinOp <inner|outer|override> in-dir out-dir
+Hadoop join Hadoop/sort 2 7[-m maps] [-r reduces] [-inFormat input format class] [-outFormat output format class] [-outKey output key class] [-outValue output value class] [-totalOrder pcnt numsamples max splits]
+/usr/local/hadoop/bin/hadoop jar build/hadoop-examples.jar sort -m maps -r reduces -inFormat input format class -outFormat output format class -outKey output key class -outValue output value class -totalOrder pcnt num samples max splits in-dir out-dir
+Hadoop secondarysort Hadoop/secondarysort 2 0 input-dir in-dir output-dir out-dir 
+/usr/local/hadoop/bin/hadoop jar build/hadoop-examples.jar secondarysort in-dir out-dir
+Mahout KMeans Mahout/kmeans    -i input-test-data -o output-folder -c input-centroid-file -dm distance-measure -x max-iterations -ow overwrite-previous -cd convergence-delta -k no-of-clusters
+/usr/local/mahout/bin/mahout kmeans -i testdata -o output -c clusters -dm org.apache.mahout.common.distance.CosineDistanceMeasure -x 5 -ow -cd 1 -k 25
+Mahout canopy Mahout/canopy 5 6 -i input-dir -o out-dir -dm distance-measure -t1 t1threshold -t2 t2threshold -t3 reducer-t1-threshold -t4 reducer-t4-threshold -cf clustersize -cl if-clustering-after-canopies -xm execution-method
+/usr/local/mahout/bin/mahout canopy -i testdata -o output -dm org.apache.mahout.common.distance.CosineDistanceMeasure -ow -t1 5 -t2 2
+R ExecutingScript /scriptfile.r
+Rscript my_script.R
+Giraph PagerankBM Giraph/PageRankBenchmark 0 5 -e edges-per-vertex -s supersteps -v verbose -V no-of-vertices -w no-of-workers
+/usr/local/hadoop/bin/hadoop jar giraph-0.1-jar-with-dependencies.jar org.apache.giraph.benchmark.PageRankBenchmark -e 1 -s 3 -v -V 50000000 -w 30
+Giraph ShortestPathBM Giraph/ShortestPathBenchmark 0 6 -c vertexclass -e edges-per-vertex -nc nocombiner -v verbose -V aggregateVertices -w num-of-workers
+/usr/local/hadoop/bin/hadoop jar /usr/local/giraph/bin/giraph-0.2-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.benchmark.ShortestPathsBenchmark
+-c vertexclass -e edges-per-vertex -nc nocombiner -v verbose -V aggregateVertices -w num-of-workers
+Giraph/ConnectedComponents
+/usr/local/hadoop/bin/hadoop jar /usr/local/giraph/bin/giraph-0.2-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.examples.ConnectedComponents
+Giraph/SimplePageRankVertex
+/usr/local/hadoop/bin/hadoop jar /usr/local/giraph/bin/giraph-0.2-SNAPSHOT-for-hadoop-0.20.203.0-jar-with-dependencies.jar org.apache.giraph.examples.SimplePageRankVertex

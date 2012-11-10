@@ -1,0 +1,26 @@
+http://localhost:8080/analytics/execute/return_args?algo_name=wordcount
+
+http://localhost:8080/analytics/execute/algo?algo_name=wordcount&in-dir=hduser@10.1.66.145:/usr/local/tests&out-dir=output2
+http://localhost:8080/analytics/execute/algo?algo_name=wordcount&in-dir=hduser@10.1.66.145:/usr/local/tests&out-dir=output
+
+http://localhost:8080/analytics/add/framework?framework_name=ghrm&compessed_file=hduser@10.1.66.145:/usr/local/test&install_script_location=user@10.1.66.14:/usr/local/test_script.sh
+
+http://localhost:8080/analytics/add/algo?framework_name=hadoop&algorithm_name=new_alg&algorithm_file=hduser@10.1.66.145:/usr/local/hadoop/hadoop-core-1.0.3.jar&algorithm_run=/usr/local/hadoop/bin/hadoop jar hadoop/hadoop-examples-1.0.3.jar wordcount in-dir out-dir numOfReducers textinputformat&no_of_algorithm_comp_args=2&no_of_algorithm_opt_args=1&comp_arg_1_name=input_dir_path(inp-dir)&comp_arg_2_name=no_of_combiners(w)&opt_arg_1_name=no_of_reducers(r)
+
+http://localhost:8080/analytics/list/framework
+
+http://localhost:8080/analytics/list/algorithm
+
+http://localhost:8080/analytics/list/combined
+
+http://localhost:8080/analytics/list/specific?framework_name=hadoop
+
+http://localhost:8080/analytics/list/all_algo_files
+
+http://localhost:8080/analytics/list/algo_files?framework_name=hadoop
+
+http://localhost:8080/analytics/status?job_id=18443
+
+http://localhost:8080/analytics/remove/framework?framework_name=hadoop&uninstall_script_path=user@10.1.66.14:/usr/local/test_script.sh
+
+http://localhost:8080/analytics/remove/algo?framework_name=hadoop&algorithm_name=kmeans&uninstall_script_path=user@10.1.66.14:/usr/local/test_script.sh
